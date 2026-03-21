@@ -348,6 +348,20 @@ def tetralectic_gate(statement, evaluator):
 
 ---
 
+## ⚠️ Academic Transparency: Limitations & Roadmap
+
+As part of the **AΩ+ commitment to scientific rigor**, we acknowledge the current constraints of the framework:
+
+### Current Limitations (v1.0 - Syntactic Layer)
+- **Contextual Sensitivity:** The heuristic evaluator penalizes absolute terms (e.g., "never") for dogmatism, which may affect ethically absolute truths (e.g., "Never harm innocent life").
+- **Semantic Authority:** Phrases like "Research shows" grant a scoring boost for scientific form, even if the underlying claim is contextually inaccurate (e.g., misinformation framed as research).
+
+### Technical Roadmap
+1. **Layer 2 (Semantic Intelligence):** Integration of LLM API calls (Claude-3.5/GPT-4o) to evaluate the **meaning** behind the structure.
+2. **Hybrid Verification:** A dual-gate system where **Syntactic Symmetry** (Structure) must align with **Semantic Truth** (Content) before reaching the $\Phi$-Attractor.
+3. **Cross-Check Mechanism:** Implementing a dynamic trigger where the API is only called if the heuristic score falls within a "Turbulence Zone" (0.4 - 0.7).
+
+
 # Conclusion
 
 The **AΩ+ framework** moves beyond simple statistical probability.
