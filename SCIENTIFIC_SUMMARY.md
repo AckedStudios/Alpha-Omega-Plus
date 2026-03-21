@@ -1,6 +1,3 @@
-Below is the **GitHub-formatted version** (clean Markdown, headings normalized, symbols rendered with LaTeX so it works in README / docs). It is safe for **direct repository paste**.
-
-```markdown
 # Scientific Summary: AΩ+ Validation & Theoretical Foundations
 
 This document summarizes the core scientific validations and logical proofs contained within the **AΩ+ research framework**, addressing the mathematical stability of reasoning in Large Language Models (LLMs).
@@ -25,7 +22,7 @@ A consistent **truth state** must remain stable even under high-curvature (high-
 The model incorporates interaction between the reasoning field and data structure:
 
 $$
-T^{\mu\nu}\partial_\mu \psi \partial_\nu \psi
+T^{\mu\nu} \partial_\mu \psi \partial_\nu \psi
 $$
 
 This term represents the **backreaction of information density** on the reasoning field, ensuring that the AI field state remains aligned with the factual data environment.
@@ -83,7 +80,7 @@ as a scaling constant for reasoning stability.
 
 ### Token Optimization
 
-The harmonic scaling principle adjusts computational resources based on **logical depth** $N$.
+The harmonic scaling principle adjusts computational resources based on **logical depth** $N$, where $N$ represents the **problem complexity or number of reasoning steps**.
 
 $$
 T(N) \propto \Phi^N
@@ -95,9 +92,9 @@ This ensures proportional allocation of tokens relative to reasoning complexity.
 
 Using $\Phi$ prevents:
 
-- overfitting of reasoning chains
-- unstable logic expansion
-- inefficient resource usage
+- overfitting of reasoning chains  
+- unstable logic expansion  
+- inefficient resource usage  
 
 ---
 
@@ -133,9 +130,9 @@ The **AΩ+ framework** proposes a mathematical foundation for reasoning stabilit
 Key principles include:
 
 - Field-based reasoning models  
-- symmetry verification through tetralectic logic  
-- harmonic scaling using the golden ratio  
-- entropy minimization for alignment  
+- Symmetry verification through tetralectic logic  
+- Harmonic scaling using the golden ratio  
+- Entropy minimization for alignment  
 
 These mechanisms aim to reduce the **"illusion of thinking"** by anchoring AI reasoning within principles of **field stability, symmetry, and harmonic proportionality**.
 
@@ -146,4 +143,3 @@ Athanassios Kapralos
 
 **Theoretical Framework**  
 AΩ+ (Alpha–Omega Plus)
-```
