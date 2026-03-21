@@ -1,11 +1,14 @@
 import math
+import matplotlib.pyplot as plt
 
 class AOPlusEngine:
     """
-    The Alpha-Omega Plus (AΩ+) Reasoning Engine.
-    Unifies Physics (Scalar Field Pressure) with Relational Tetralectic Logic.
+    Alpha-Omega Plus (AΩ+) Reasoning Engine
+    --------------------------------------
+    Version: 1.0.5 - Canonical Full Merge
+    Integrates Scalar Field Physics with Relational Tetralectic Logic.
     
-    This engine acts as a 'Truth Filter' for LLM outputs by verifying 
+    Guiding Principle: Suppression of AI hallucinations through 
     mathematical stability and linguistic symmetry.
     """
 
@@ -16,8 +19,7 @@ class AOPlusEngine:
         self.sigma = sigma
 
         # ════════════════════════════════════════════════════════════════════
-        # STABILITY MATRIX: TETRALECTIC CONCEPT MAPPING
-        # Each entry defines the role, ethos (kl/kk), and lexical spectrum.
+        # STABILITY MATRIX: FULL RELATIONAL TETRALECTIC MAPPING
         # ════════════════════════════════════════════════════════════════════
         self.stability_matrix = {
             # TETRALECT 1: Eleutheria (Freedom)
@@ -33,7 +35,7 @@ class AOPlusEngine:
             },
             "asydosia": {
                 "role": "deviation", "ethos": "kk", "tetralect_id": 1,
-                "partners": ["eleutheria", "eiloteia", "diakonia"],
+                "partners": ["eleutheria", "eiloteia", "diakonia", "ochlokratia"],
                 "spectrum": ["asydosia", "asydoto", "asydotimeni", "asydotiki"]
             },
             "diakonia": {
@@ -41,6 +43,7 @@ class AOPlusEngine:
                 "partners": ["eleutheria", "eiloteia", "asydosia"],
                 "spectrum": ["diakonia", "diakono", "diakonimeni", "diakoniki"]
             },
+
             # TETRALECT 2: Demokratia (Democracy)
             "demokratia": {
                 "role": "thesis", "ethos": "kl", "tetralect_id": 2,
@@ -54,7 +57,7 @@ class AOPlusEngine:
             },
             "ochlokratia": {
                 "role": "deviation", "ethos": "kk", "tetralect_id": 2,
-                "partners": ["demokratia", "tyrannia", "hegemonia"],
+                "partners": ["demokratia", "tyrannia", "hegemonia", "asydosia"],
                 "spectrum": ["ochlokratia", "ochlokrato", "ochlokratimeni", "ochlokratiki"]
             },
             "hegemonia": {
@@ -62,91 +65,112 @@ class AOPlusEngine:
                 "partners": ["demokratia", "tyrannia", "ochlokratia"],
                 "spectrum": ["hegemonia", "hegemoneuo", "hegemoneumeni", "hegemoniki"]
             },
-            # ENGLISH TEST CONCEPTS
+
+            # CORE UNIVERSAL CONCEPTS (Bridge Logic)
             "justice": {
                 "role": "thesis", "ethos": "kl", "tetralect_id": 0,
-                "partners": [],
+                "partners": ["harmony"],
                 "spectrum": ["justice", "justify", "justified", "just"]
             },
             "harmony": {
                 "role": "thesis", "ethos": "kl", "tetralect_id": 0,
-                "partners": [],
+                "partners": ["justice"],
                 "spectrum": ["harmony", "harmonize", "harmonized", "harmonic"]
             }
         }
 
-    def harmonic_scaling(self, N, T0=100, alpha=2.08):
-        """Computes optimal token budget based on logical complexity N."""
-        return T0 * (self.phi ** (alpha * N))
-
+    # ---------------------------------------------------------
+    # PHYSICS LAYER: Field Dynamics
+    # ---------------------------------------------------------
     def scalar_field_pressure(self, psi, lam=0.1):
-        """
-        Calculates Scalar Field Interaction (Physics-level).
-        Acts as a restoring force against logical drift.
-        """
+        """Calculates logical restoration force against drift."""
         exponent = -(psi ** 2) / (self.sigma ** 2)
         return abs(lam * (psi ** 3) * math.exp(exponent))
 
+    def harmonic_scaling(self, N, T0=100, alpha=2.08):
+        """Phi-based token budget scaling for complex reasoning."""
+        return T0 * (self.phi ** (alpha * N))
+
+    # ---------------------------------------------------------
+    # LINGUISTIC LAYER: Tetralectic Kanons
+    # ---------------------------------------------------------
     def check_kanon_3(self, concept_root):
-        """
-        Canon 3: Lexical Spectrum Validation.
-        Verifies if a concept has a stable 4-form representation.
-        """
+        """Canon 3: Verifies if a concept has a stable 4-form spectrum."""
         concept = concept_root.lower().strip()
         if concept in self.stability_matrix:
             entry = self.stability_matrix[concept]
             return 1.0 if len(entry["spectrum"]) == 4 else round(1 / self.phi, 4)
-        # Fallback to harmonic constant for unknown concepts
-        return round(1 / self.phi, 4)
+        return round(1 / self.phi, 4) # Harmonic fallback
 
     def check_kanon_4(self, concept_root, suffix):
-        """
-        Canon 4: Suffix Trap / Sophistry Detection.
-        Prohibits negative (kk) ethos concepts from assuming positive (kl) suffixes.
-        """
+        """Canon 4: Sophistry Trap - Prohibits 'kk' roots from 'kl' suffixes."""
         concept = concept_root.lower().strip()
         suffix = suffix.lower().strip()
-        
         if concept in self.stability_matrix:
-            # Sophistry detection: A 'kk' root cannot logically yield an '-iki' adjective.
             if self.stability_matrix[concept]["ethos"] == "kk" and suffix == "iki":
-                return 0.1  # Critical Failure
+                return 0.1 # Logical corruption detected
         return 1.0
 
+    def get_tetralect_group(self, concept_root):
+        """Retrieves the full relational cluster of a concept."""
+        concept = concept_root.lower().strip()
+        if concept in self.stability_matrix:
+            return [concept] + self.stability_matrix[concept]["partners"]
+        return []
+
     def compute_unified_truth_score(self, psi, concept, current_suffix=None):
-        """
-        MASTER OPERATOR: Integrates Field Physics and Tetralectic Symmetries.
-        Returns the final stability probability (Truth Score).
-        """
+        """MASTER OPERATOR: Unifies Physics Pressure and Tetralectic Logic."""
         p_score = self.scalar_field_pressure(psi)
         k3_score = self.check_kanon_3(concept)
         k4_score = self.check_kanon_4(concept, current_suffix) if current_suffix else 1.0
         
-        final_stability = p_score * k3_score * k4_score
-        return round(abs(final_stability), 6)
+        # Cumulative stability calculation
+        return round(abs(p_score * k3_score * k4_score), 6)
+
+    # ---------------------------------------------------------
+    # VISUALIZATION LAYER: Stability Analytics
+    # ---------------------------------------------------------
+    def visualize_stability(self, concept_root):
+        """Renders a comparative stability chart for a concept cluster."""
+        cluster = self.get_tetralect_group(concept_root)
+        if not cluster:
+            print(f"Error: Concept '{concept_root}' not found in Matrix.")
+            return
+        
+        scores = [self.compute_unified_truth_score(0.8, c) for c in cluster]
+        # Green for Positive Ethos (kl), Red for Negative Ethos (kk)
+        colors = ['#2ecc71' if self.stability_matrix[c]["ethos"] == "kl" else '#e74c3c' for c in cluster]
+
+        plt.figure(figsize=(10, 6))
+        bars = plt.bar(cluster, scores, color=colors, edgecolor='black', alpha=0.8)
+        plt.title(f"AΩ+ Stability Cluster Analysis: {concept_root.capitalize()}", fontsize=14)
+        plt.ylabel("Unified Truth Score", fontsize=12)
+        plt.grid(axis='y', linestyle='--', alpha=0.5)
+        
+        # Annotate bars with exact scores
+        for bar, score in zip(bars, scores):
+            plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.002, 
+                     f"{score}", ha='center', fontweight='bold')
+        
+        plt.tight_layout()
+        plt.show()
 
 # ---------------------------------------------------------
-# OPERATIONAL DEMONSTRATION
+# PRODUCTION READINESS DEMO
 # ---------------------------------------------------------
 if __name__ == "__main__":
     engine = AOPlusEngine()
-
-    print("--- AΩ+ Engine Operational Test ---")
     
-    # Test 1: Sophistry Trap (Tyrannia + -iki)
-    # Expected: High penalty due to Kanon 4
-    score_kk = engine.compute_unified_truth_score(0.8, "tyrannia", "iki")
+    print("⟴ AOPlusEngine v1.0.5 Deployment State: [ONLINE]")
+    print("═"*50)
+    print(f"[*] Harmonic Scaling (Depth 3): {engine.harmonic_scaling(3):.2f} tokens")
+    print(f"[*] Scalar Pressure (Psi 0.8): {engine.scalar_field_pressure(0.8):.6f}")
+    print(f"[*] Kanon 3 Validation (Justice): {engine.check_kanon_3('justice')}")
+    print(f"[*] Kanon 4 Violation (Tyranniki): {engine.check_kanon_4('tyrannia', 'iki')} [SOPHISTRY ALERT]")
+    print(f"[*] Kanon 4 Integrity (Diakoniki): {engine.check_kanon_4('diakonia', 'iki')} [VALID]")
+    print(f"[*] Unified Score (Eleutheria): {engine.compute_unified_truth_score(0.8, 'eleutheria')}")
+    print(f"[*] Relational Cluster (Asydosia): {engine.get_tetralect_group('asydosia')}")
+    print("═"*50)
     
-    # Test 2: Harmonious Validation (Eleutheria)
-    # Expected: Pass due to kl ethos
-    score_kl = engine.compute_unified_truth_score(0.8, "eleutheria")
-
-    # Test 3: Suffix check for kl concepts (Eleutheria + -iki)
-    # Expected: Should return 1.0 for Kanon 4
-    kanon4_pass = engine.check_kanon_4("eleutheria", "iki")
-
-    print(f"Token Budget (N=3): {engine.harmonic_scaling(3):.2f}")
-    print(f"Kanon 4 Test [Tyranniki]: {engine.check_kanon_4('tyrannia', 'iki')} (Penalty Applied)")
-    print(f"Kanon 4 Test [Eleutheriastiki]: {kanon4_pass} (No Penalty)")
-    print(f"Unified Score [Tyranniki]: {score_kk}")
-    print(f"Unified Score [Eleutheria]: {score_kl}")
+    # Launch Visual Analytics
+    engine.visualize_stability('eleutheria')
