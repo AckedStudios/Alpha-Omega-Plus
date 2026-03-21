@@ -47,9 +47,32 @@ def tetralectic_gate(statement, evaluator):
     }
 
 # --- Placeholder for Evaluation Logic ---
-def logical_consistency_eval(text):
-    """Placeholder function to simulate a logic-check model output."""
-    return 0.9
+def logical_consistency_eval(statement):
+    """
+    Πραγματικός ελεγκτής λογικής (Beta). 
+    Ανιχνεύει ασυμμετρίες και λογικές πλάνες.
+    """
+    score = 1.0
+    statement = statement.lower()
+    
+    # Λίστα με "Κόκκινες Σημαίες" (Logic Traps)
+    traps = {
+        "πάντα": 0.1, "ποτέ": 0.1, # Απόλυτες γενικεύσεις (Ασυμμετρία)
+        "όλοι ξέρουν": 0.2, "προφανώς": 0.15, # Επίκληση στην αυθεντία/κοινή γνώμη
+        "επειδή έτσι": 0.3, # Κυκλική λογική
+        "αναμφίβολα": 0.1, # Έλλειψη αμφισημίας (δογματισμός)
+    }
+    
+    for trap, penalty in traps.items():
+        if trap in statement:
+            score -= penalty
+            
+    # Έλεγχος μήκους (Η σοφιστεία συχνά κρύβεται σε πολύ μικρές ή πολύ μεγάλες προτάσεις)
+    if len(statement) < 10 or len(statement) > 500:
+        score -= 0.2
+        
+    return max(0.1, round(score, 2))
+
 
 # --- Example Usage ---
 if __name__ == "__main__":
