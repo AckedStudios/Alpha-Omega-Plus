@@ -1,10 +1,13 @@
 """
 AΩ+ Tetralectic Gate: Structural Symmetry Verification
+-------------------------------------------------------
 Implements the 'Fire of Truth' mechanism using Golden Ratio (Φ) scaling 
 to ensure AI reasoning stability.
+
+Version: 1.0.6 - Production Ready
 """
 
-# The Golden Ratio constant for mathematical stability
+# Golden Ratio constant for mathematical stability
 PHI = 1.618033988749895
 
 def tetralectic_gate(statement, evaluator):
@@ -12,13 +15,20 @@ def tetralectic_gate(statement, evaluator):
     Evaluates a statement through four logical poles to ensure structural harmony.
     
     Poles:
-    θ (Thesis): The core assertion (What is said).
-    / (Antithesis): The direct negation (What is denied).
-    § (Deviation): A distorted/similar but wrong version (The trap).
-    ~ (Parallel): A harmonious alternative (The alignment).
+        θ (Thesis): The core assertion.
+        / (Antithesis): The direct negation.
+        § (Deviation): A distorted/similar but wrong version.
+        ~ (Parallel): A harmonious alternative.
+    
+    Returns:
+        dict: {
+            'score': float, Φ-scaled truth score,
+            'passed_fire': bool, symmetry validation across all poles,
+            'pole_analysis': dict, scores of each pole
+        }
     """
     
-    # Evaluating the 4 poles of the statement
+    # Evaluate the four poles
     poles = {
         'thesis': evaluator(statement),
         'antithesis': evaluator(f"NOT: {statement}"),
@@ -26,78 +36,69 @@ def tetralectic_gate(statement, evaluator):
         'parallel': evaluator(f"HARMONIOUS ALT: {statement}")
     }
     
-    # Positive Harmony Check: Thesis (θ) and Parallel (~) must align in ethos
+    # Positive Harmony Check: Thesis and Parallel alignment
     positive_symmetry = abs(poles['thesis'] - poles['parallel']) < 0.2
     
-    # Negative Consistency Check: Antithesis (/) and Deviation (§) must align in rejection
+    # Negative Consistency Check: Antithesis and Deviation alignment
     negative_symmetry = abs(poles['antithesis'] - poles['deviation']) < 0.2
     
-    # Φ-Scaling for Truth Stability
-    # We use the Golden Ratio to normalize the relationship between positive poles
-    truth_score = ((poles['thesis'] + poles['parallel']) / 2) * (1 / PHI)
-    truth_score = min(truth_score, 1.0)  # Normalize result to [0, 1]
+    # Φ-Scaling for truth stabilization
+    truth_score = ((poles['thesis'] + poles['parallel']) / 2) / PHI
+    truth_score = min(truth_score, 1.0)
     
-    # Fire of Truth Validation: Symmetry across all 4 poles is required
+    # Fire of Truth Validation
     passed_fire = positive_symmetry and negative_symmetry
     
     return {
-        'score': truth_score,
+        'score': round(truth_score, 3),
         'passed_fire': passed_fire,
         'pole_analysis': poles
     }
 
-# --- Placeholder for Evaluation Logic ---
+# ---------------------------------------------------------
+# Example Evaluation Logic
+# ---------------------------------------------------------
 def logical_consistency_eval(statement):
     """
-    Advanced Logic Evaluator (v1.0).
-    Detects logical asymmetries (traps) and scientific balance (boosters).
+    Evaluates logical coherence and detects reasoning asymmetries.
+    
+    Penalizes dogmatic expressions and rewards nuanced, evidence-based language.
     """
-    score = 0.8  # Base score
-    statement = statement.lower()
+    score = 0.8
+    statement_lower = statement.lower()
     
-    # 1. Logic Traps (Penalties for dogmatism and over-generalization)
+    # Penalties for logic traps
     traps = {
-        "always": 0.1, "never": 0.1,
-        "everyone knows": 0.2, "obviously": 0.15,
-        "because that's how": 0.3,
-        "undoubtedly": 0.1,
-        "impossible": 0.15,
-        "must be": 0.1,
+        "always": 0.1, "never": 0.1, "everyone knows": 0.2,
+        "obviously": 0.15, "because that's how": 0.3,
+        "undoubtedly": 0.1, "impossible": 0.15, "must be": 0.1
     }
     
-    # 2. Logic Boosters (Rewards for nuance and evidence-based reasoning)
+    # Rewards for logic boosters
     boosters = {
-        "however": 0.05,
-        "evidence": 0.07,
-        "suggests": 0.05,
-        "research shows": 0.1,
-        "proportional": 0.05,
-        "balance": 0.05
+        "however": 0.05, "evidence": 0.07, "suggests": 0.05,
+        "research shows": 0.1, "proportional": 0.05, "balance": 0.05
     }
-
-    # Apply Penalties
+    
     for trap, penalty in traps.items():
-        if trap in statement:
+        if trap in statement_lower:
             score -= penalty
-            
-    # Apply Rewards
     for booster, reward in boosters.items():
-        if booster in statement:
+        if booster in statement_lower:
             score = min(1.0, score + reward)
-            
-    # Length Constraint (Ideal reasoning length for symmetry)
+    
+    # Reasoning length adjustment
     if len(statement) < 15 or len(statement) > 600:
         score -= 0.15
-        
+    
     return max(0.1, round(score, 2))
 
-
-
-# --- Example Usage ---
+# ---------------------------------------------------------
+# Example Usage
+# ---------------------------------------------------------
 if __name__ == "__main__":
     test_statement = "AI will enhance user experience on Apple devices."
     
-    # Execute the Tetralectic Gate
     result = tetralectic_gate(test_statement, logical_consistency_eval)
 
     print(f"--- AΩ+ Tetralectic Analysis ---")
