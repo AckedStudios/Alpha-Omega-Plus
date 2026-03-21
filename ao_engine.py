@@ -7,8 +7,7 @@ class AOPlusEngine:
     """
     Alpha-Omega Plus (AΩ+) Reasoning Engine
     --------------------------------------
-    Version: 1.0.7 - Ultimate Production Edition
-    Integrates Scalar Field Physics, Tetralectic Logic, 
+       Integrates Scalar Field Physics, Tetralectic Logic, 
     and full cluster analytics with DataFrame logging.
     """
 
