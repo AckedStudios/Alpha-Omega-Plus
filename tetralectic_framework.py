@@ -7,7 +7,7 @@ PHI = 1.618033988749895
 
 class AOPlusEngine:
     """
-    Alpha-Omega Plus (AΩ+) Reasoning Engine v1.4.0
+    Alpha-Omega Plus (AΩ+) Reasoning Engine
     ----------------------------------------------
     Adds pass/fail color-coded visualization for Total Stability.
     """
