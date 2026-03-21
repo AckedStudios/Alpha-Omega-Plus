@@ -2,7 +2,7 @@
 AΩ+ Truth Evaluation Engine
 ---------------------------
 Multi-dimensional truth evaluation algorithm for AI reasoning.
-Version: 1.0.6 - Modular & Production Ready
+Modular & Production Ready
 """
 
 def evaluate_truth(statement, dimensions, weights):
