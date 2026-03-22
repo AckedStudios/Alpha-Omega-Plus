@@ -93,4 +93,35 @@ To analyze how the Saturating Filter and Harmonic Scaling prevent hallucinations
 # To read the case study in your terminal
 cat BROKEN_SYLLOGISM.md
 ```
+## 4. Getting Started
+
+Follow these steps to deploy and test the AΩ+ Research Framework on your local environment.
+
+### 1. Clone the Research Repository
+Open your terminal and clone the framework to your machine:
+```bash
+git clone https://github.com/athanassios-kapralos/Alpha-Omega-Plus.git
+cd Alpha-Omega-Plus
+```
+
+### 2. Execute the Integrated Demonstration
+Run the core demo to see the Tetralectic Gate, Truth Evaluation, and Justice Stability modules working in synchrony:
+```bash
+python AO_plus_demo.py
+```
+
+### 3. Verify Logical Stability
+To analyze how the Saturating Filter and Harmonic Scaling prevent hallucinations, examine the case study documentation:
+```bash
+# To read the case study in your terminal
+cat BROKEN_SYLLOGISM.md
+```
+
+### 4. Mathematical Validation
+For the full relativistic scalar field equations and the Lagrangian density used in the `ao_engine.py`, refer to the technical summary:
+```bash
+# Explore the scientific foundations
+cat SCIENTIFIC_SUMMARY.md
+```
+
 
