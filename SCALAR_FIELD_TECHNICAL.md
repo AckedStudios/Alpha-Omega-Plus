@@ -233,4 +233,7 @@ Interpretation:
 ✅ Summary of Project Evolution
 AΩ+ transitions AI from stochastic prediction to grounded, symmetric evolution. By anchoring statistical sampling to field stability, we provide a mathematical and engineering bridge between relativistic field theory and neural inference.
 
+14. Disclaimer
+The AΩ+ framework is an experimental research proposal. While the mathematical foundations are derived from relativistic field theory, its application to neural architectures requires careful hyperparameter tuning. It is intended for research purposes and to foster a deeper dialogue between theoretical physics and machine learning.
+
 
