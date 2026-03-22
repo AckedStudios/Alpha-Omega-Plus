@@ -292,5 +292,5 @@ multidimensional semantic evaluation
 field-based reasoning dynamics
 
 By representing truth as a coherence state across twelve dimensions, AΩ+ defines reasoning as the search for stable configurations within a semantic field.
-:::
+
 
