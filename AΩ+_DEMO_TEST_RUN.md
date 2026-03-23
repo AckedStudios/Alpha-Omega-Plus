@@ -4,7 +4,7 @@
 This document provides a full execution trace of the **AΩ+ Persistent Reasoning Verification Layer**. It demonstrates how the system handles strategic uncertainty, triggers circuit breakers on high entropy, and stabilizes truth fields through iterative refinement.
 
 ## 2. Technical Parameters
-* **Prompt Engine:** AΩ+ v2.4 (Integrated Layer Edition)
+* **Prompt Engine:** AΩ+
 * **Target Field:** Nuclear Fusion Investment Strategy
 * **Initial Entropy ($\psi_e$):** LOW
 * **Final Coherence ($\psi_t$):** 0.45 (Turbulent Field)
