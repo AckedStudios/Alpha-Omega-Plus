@@ -32,16 +32,7 @@ To filter hallucinations and enforce structural resonance, every inference passe
 | Deviation | § | Detection of logical traps and “hallucination” paths. |
 | Parallel | ~ | Harmonious alternative or contextual reframing. |
 
-### 2.2 Scalar Field Reasoning (ψ)
 
-Reasoning is modeled as a scalar field *ψ* on a logical manifold.
-
-- **ψₜ (Truth Coherence):** The objective stability of a claim.  
-- **ψₑ (Entropy):** The measure of informational noise.  
-- **ψ_ω (Omega Coherence):** Teleological validation—ensuring the output serves its ultimate purpose.
-
-**Curvature Coupling:** Logical complexity is treated as spacetime curvature.  
-**Entropy Minimization:** Truth corresponds to the lowest energy state (Φ‑Attractor).
 
 ### 2.3 Harmonic Scaling (Φ)
 
