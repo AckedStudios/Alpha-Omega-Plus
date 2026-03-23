@@ -121,6 +121,7 @@ The engine evaluates information across **12 Dimensions of Truth** to ensure a �
 
 ---
 
+
 ## 5. Deployment & Execution
 
 1. **Clone the Repository**  
@@ -130,10 +131,12 @@ The engine evaluates information across **12 Dimensions of Truth** to ensure a �
    ```
 
 2. **Run the Integrated Demo**  
-   Execute the core engine to see the Tetralectic Gate and Truth Evaluation modules in synchrony:
+   Execute the core engine to see the Tetralectic Gate, Truth Evaluation, and Justice modules in synchrony:
    ```bash
    python ao_plus_demo.py
    ```
+   > **Note:** The demo includes an optional **Scalar Field Engine** simulation (step 4).  
+   > This requires `ao_engine.py`, which is included in the repository. If the file is missing, the demo will still run but will skip this part.
 
 3. **Verify Logical Stability**  
    Examine the case study to understand how the Saturating Filter and Harmonic Scaling prevent hallucinations:
@@ -151,6 +154,8 @@ The engine evaluates information across **12 Dimensions of Truth** to ensure a �
    The framework can be used as a **System Layer** for LLMs. By implementing the Protocol, the model adopts a “Silent Verification” mode, executing all 12‑dimensional checks before generating text.
 
 ---
+
+
 
 ## 6. Philosophy: Ἰδοὺ ἐξῆλθεν ὁ σπείρων τοῦ σπείρειν
 
