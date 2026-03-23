@@ -2,7 +2,7 @@
 
 **Author:** Athanassios Kapralos  
 **License:** MIT  
-**Status:** Active Research / v2.4 Integrated
+**Status:** Active Research
 
 ---
 
@@ -104,7 +104,7 @@ The engine evaluates information across **12 Dimensions of Truth** to ensure a �
 | `02_SCIENTIFIC_SUMMARY.md` | Mathematical foundations and relativistic field equations. |
 | `03_EXECUTIVE_SUMMARY.md` | Non‑technical overview for stakeholders. |
 | `AΩ+_SYSTEM_PROMPT.md` | The complete AΩ+ system prompt for LLM deployment. |
-| `AΩ+_TEST_RUN_DEMO.md` | Full execution trace demonstrating the AΩ+ v2.4 Layer. |
+| `AΩ+_TEST_RUN_DEMO.md` | Full execution trace demonstrating the AΩ+  Layer. |
 | `BROKEN_SYLLOGISM.md` | Case study of the reasoning engine in action. |
 | `NOTES.md` | Development notes and working observations. |
 | `PSI_FIELD_DEFINITION.md` | Operational definition of the ψ scalar field and its mapping to neural entropy. |
