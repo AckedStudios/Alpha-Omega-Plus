@@ -2,126 +2,131 @@
 
 **Author:** Athanassios Kapralos  
 **License:** MIT  
-**Status:** Active Research  
-
----
+**Status:** Active
 
 ## 1. Overview
 
-**Alpha-Omega-Plus (AΩ+)** is an advanced framework addressing the "Illusion of Thinking" in Large Language Models (LLMs).  
+Alpha-Omega-Plus (AΩ+) is an advanced research framework designed to eliminate the *"Illusion of Thinking"* in Large Language Models (LLMs). By moving beyond statistical token prediction, AΩ+ implements a rigorous **Reasoning Verification Layer** that anchors AI outputs in mathematical, logical, and ethical consistency.
 
-Unlike standard models that rely on statistical token prediction, AΩ+ introduces:
-
-- **Field-Based Reasoning**  
-- **Tetralectic Logic (Four-Pole Symmetry)**  
-- **Harmonic Scaling (Φ ≈ 1.618)**  
-
-These components anchor AI outputs in **mathematical, logical, and ethical consistency**.
+Unlike standard prompting, AΩ+ operates as a **Scalar Field Controller**, treating logical coherence as a manifold where truth represents the state of minimum entropy.
 
 ---
 
-## 2. Core Concepts
+## 2. Core Theoretical Pillars
 
-### Tetralectic Logic
-Four-pole symmetry ensures logical verification:
+### 2.1 Tetralectic Logic (Four-Pole Symmetry)
 
-| Pole | Symbol | Meaning |
-|------|--------|---------|
-| Thesis | θ | Core assertion |
-| Antithesis | / | Direct negation |
-| Deviation | § | Detection of logical traps |
-| Parallel | ~ | Harmonious alternative |
+To filter hallucinations and enforce structural resonance, every inference passes through the Tetralectic Gate:
 
-**Purpose:** Filters hallucinations and enforces structural resonance.
+| Pole | Symbol | Function |
+|------|--------|----------|
+| Thesis | θ | The core assertion or claim. |
+| Antithesis | / | The strongest possible negation or counter‑argument. |
+| Deviation | § | Detection of logical traps and “hallucination” paths. |
+| Parallel | ~ | Harmonious alternative or contextual reframing. |
+
+### 2.2 Scalar Field Reasoning (ψ)
+
+Reasoning is modeled as a scalar field *ψ* on a logical manifold.
+
+- **ψₜ (Truth Coherence):** The objective stability of a claim.  
+- **ψₑ (Entropy):** The measure of informational noise.  
+- **ψ_ω (Omega Coherence):** Teleological validation—ensuring the output serves its ultimate purpose.
+
+**Curvature Coupling:** Logical complexity is treated as spacetime curvature.  
+**Entropy Minimization:** Truth corresponds to the lowest energy state (Φ‑Attractor).
+
+### 2.3 Harmonic Scaling (Φ)
+
+The framework utilizes the Golden Ratio (Φ ≈ 1.618) to guide computational resource allocation, ensuring that deep reasoning chains remain stable and efficient.
+
+### 2.4 Truth & Justice Evaluation
+
+Multi‑dimensional truth scoring evaluates:
+- Symmetry  
+- Proportionality  
+- Coherence  
+- Ethics  
+
+Ethical alignment emerges naturally as the system minimizes reasoning entropy.
 
 ---
 
-### Scalar Field Reasoning (ψ)
-- Models reasoning as a **scalar field** on a logical manifold.  
-- **Curvature Coupling:** Logical complexity treated as spacetime curvature.  
-- **Entropy Minimization:** Truth = lowest energy state (**Φ-Attractor**).
+## 3. The Functional Architecture (The 12 Dimensions)
+
+The engine evaluates information across **12 Dimensions of Truth** to ensure a “Stable Field” output:
+
+| Category | Dimension | Evaluation Focus |
+|----------|-----------|------------------|
+| **Structural** | D1 Nominal | Terminology and naming correctness. |
+| | D2 Conceptual | Alignment with standard definitions. |
+| | D3 Propositional | Validity of the logical implication. |
+| **Contextual** | D4 Applicative | Domain and boundary conditions. |
+| | D5 Spatial | Geographical or physical validity. |
+| | D6 Modal | Necessity vs. contingency. |
+| **Empirical** | D7 Temporal | Stability of the claim over time. |
+| | D8 Quantitative | Measurable data and statistical evidence. |
+| | D9 Qualitative | Intrinsic defining characteristics. |
+| **Relational** | D10 Causal | Soundness of the cause‑effect chain. |
+| | D11 Intuitive | Experiential and heuristic plausibility. |
+| | D12 Logical | Internal formal consistency. |
+
+**Dimensional Coupling:** The framework enforces interdependency. For example, if D8 (Quantitative) is low, D10 (Causal) is automatically penalized to prevent unsupported assertions.
 
 ---
 
-### Harmonic Scaling (Φ)
-- Uses the **Golden Ratio (Φ ≈ 1.618)** for proportional allocation of computational resources.  
-- Ensures stability and efficiency in deep reasoning chains.
+## 4. Repository Structure
 
----
-
-### Truth & Justice Evaluation
-- Multi-dimensional truth scoring: symmetry, proportionality, coherence, ethics.  
-- Ethical alignment emerges naturally as the system minimizes reasoning entropy.
-
----
-
-## 3. Repository Structure
-
-| Folder/File | Description |
+| File/Folder | Description |
 |-------------|-------------|
-| `MANIFESTO.md` | Theoretical principles and research vision |
-| `SCIENTIFIC_SUMMARY.md` | Mathematical validation and foundations |
-| `EXECUTIVE_SUMMARY.md` | Non-technical overview |
-| `BROKEN_SYLLOGISM.md` | Case study of reasoning engine |
-| `ao_engine.py` | Core scalar field engine |
-| `tetralectic_gate.py` | Tetralectic four-pole logic implementation |
-| `truth_evaluator.py` | Multi-dimensional truth scoring |
-| `AO_plus_demo.py` | Demo workflow |
+| `ao_engine.py` | Core scalar field engine and mathematical logic. |
+| `tetralectic_gate.py` | Implementation of the four‑pole logic filter. |
+| `truth_evaluator.py` | The 12‑dimensional scoring and coupling module. |
+| `AO_plus_demo.py` | Integrated demo workflow. |
+| `Ao_DEMO_TEST_RUN.md` | A full execution trace demonstrating the AΩ+ v2.4 Layer. |
+| `MANIFESTO.md` | Theoretical principles and research vision. |
+| `SCIENTIFIC_SUMMARY.md` | Mathematical foundations and relativistic field equations. |
+| `EXECUTIVE_SUMMARY.md` | Non‑technical overview for stakeholders. |
+| `BROKEN_SYLLOGISM.md` | Case study of the reasoning engine in action. |
 
 ---
 
-## 4. Getting Started
+## 5. Deployment & Execution
 
-Follow these steps to deploy and test the AΩ+ Research Framework on your local environment.
-
-### 1. Clone the Research Repository
-Open your terminal and clone the framework to your machine:
-```bash
-git clone https://github.com/athanassios-kapralos/Alpha-Omega-Plus.git
-cd Alpha-Omega-Plus
+1. **Clone the Repository**  
+   ```bash
+   git clone https://github.com/athanassios-kapralos/Alpha-Omega-Plus.git
+   cd Alpha-Omega-Plus
 ```
 
-### 2. Execute the Integrated Demonstration
-Run the core demo to see the Tetralectic Gate, Truth Evaluation, and Justice Stability modules working in synchrony:
-```bash
-python AO_plus_demo.py
+1. Run the Integrated Demo
+   Execute the core engine to see the Tetralectic Gate and Truth Evaluation modules in synchrony:
+   ```bash
+   python AO_plus_demo.py
+   ```
+2. Verify Logical Stability
+   Examine the case study to understand how the Saturating Filter and Harmonic Scaling prevent hallucinations:
+   ```bash
+   cat BROKEN_SYLLOGISM.md
+   ```
+3. Explore the Mathematical Foundations
+   Review the relativistic scalar field equations and the Lagrangian density used in the core engine:
+   ```bash
+   cat SCIENTIFIC_SUMMARY.md
+   ```
+4. Deploy the v2.4 Reasoning Layer
+   The framework can be used as a System Layer for LLMs. By implementing the v2.4 Protocol, the model adopts a “Silent Verification” mode, executing all 12‑dimensional checks before generating text.
+
+---
+
+6. Philosophy: Ἰδοὺ ἐξῆλθεν ὁ σπείρων τοῦ σπείρειν
+
+The AΩ+ Framework does not provide static answers; it provides a structured path to verification. It is a seed cast into the field of information. What illuminates for the user depends entirely on the intent of the inquiry and the integrity of the process.
+
+---
+
+AΩ+ Framework — Athanassios Kapralos
+MIT License
+
 ```
-
-### 3. Verify Logical Stability
-To analyze how the Saturating Filter and Harmonic Scaling prevent hallucinations, examine the case study documentation:
-```bash
-# To read the case study in your terminal
-cat BROKEN_SYLLOGISM.md
 ```
-## 4. Getting Started
-
-Follow these steps to deploy and test the AΩ+ Research Framework on your local environment.
-
-### 1. Clone the Research Repository
-Open your terminal and clone the framework to your machine:
-```bash
-git clone https://github.com/athanassios-kapralos/Alpha-Omega-Plus.git
-cd Alpha-Omega-Plus
-```
-
-### 2. Execute the Integrated Demonstration
-Run the core demo to see the Tetralectic Gate, Truth Evaluation, and Justice Stability modules working in synchrony:
-```bash
-python AO_plus_demo.py
-```
-
-### 3. Verify Logical Stability
-To analyze how the Saturating Filter and Harmonic Scaling prevent hallucinations, examine the case study documentation:
-```bash
-# To read the case study in your terminal
-cat BROKEN_SYLLOGISM.md
-```
-
-### 4. Mathematical Validation
-For the full relativistic scalar field equations and the Lagrangian density used in the `ao_engine.py`, refer to the technical summary:
-```bash
-# Explore the scientific foundations
-cat SCIENTIFIC_SUMMARY.md
-```
-
-
