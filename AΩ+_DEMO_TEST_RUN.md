@@ -14,6 +14,35 @@ This document provides a full execution trace of the **AΩ+ Persistent Reasoning
 This document demonstrates the **AΩ+ Persistent Reasoning Verification Layer** in action.  
 The test simulates a user query and executes the full protocol transparently.
 
+## 4. Appendix: Technical Interpretation Guide
+
+To fully understand the AΩ+ Reasoning Trace, it is essential to decode the metrics and logic gates used during the evaluation:
+
+### 1. The Coherence Metric ($\psi_t$)
+$\psi_t$ represents the **Logical and Objective Strength** of the response. 
+* **0.85 – 1.00 (Stable Field):** High-confidence answer based on verifiable facts and consistent logic.
+* **0.65 – 0.84 (Moderate):** Generally reliable, but contains some contingent or non-universal elements.
+* **0.40 – 0.64 (Turbulent Field):** The answer relies on significant assumptions or limited data. Explicit uncertainty is required.
+* **< 0.40 (Insufficient):** The claim is logically weak or lacks empirical grounding.
+
+### 2. Reasoning Entropy ($\psi_e$)
+$\psi_e$ measures **Informational Noise** and the lack of specific data. 
+* When $\psi_e$ is **HIGH**, the system triggers the **Active Circuit Breaker**. This prevents "hallucination" by halting the linear generation and forcing a transition to the **Tetralectic Gate** for a multi-perspective stress test.
+
+### 3. The Tetralectic Gate
+This is the framework’s primary "safety valve." It forces the AI to move beyond its initial conclusion:
+* **Antithesis (/):** The strongest possible counter-argument.
+* **Deviation Trap (§):** Identification of plausible but fallacious reasoning paths.
+* **Parallel Framing (~):** Shifting the perspective (e.g., from "general investment" to "strategic long-term R&D") to find a stable truth field.
+
+### 4. Dimensional Coupling
+Dimensions are not evaluated in isolation. For example, **D8 (Quantitative)** and **D10 (Causal)** are coupled. If numerical evidence is missing ($D8 = 0$), the system is prohibited from claiming a proven cause-effect chain ($D10 \rightarrow 0$), preventing overconfident but unsupported assertions.
+
+### 5. Omega Validation ($\psi_\omega$)
+This measures **Teleological Coherence**—whether the answer actually serves the user's ultimate purpose. A response can be factually correct but useless; $\psi_\omega$ ensures the output is actionable and appropriately scaled to the user's intent.
+
+
+
 ---
 
 ## User Input
@@ -179,3 +208,4 @@ The test run demonstrates that the AΩ+ prompt successfully acts as a **persiste
 - The final output included appropriate disclaimers and avoided overconfidence.
 
 The framework’s practical reliability depends on the underlying LLM’s ability to follow complex procedural instructions and recall prior conversation context.
+
