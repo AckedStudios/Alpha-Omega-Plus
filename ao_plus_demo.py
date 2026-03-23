@@ -1,104 +1,123 @@
+#!/usr/bin/env python3
 """
-ΑΩ+ (Alpha-Omega Plus) Research Demo
-Integrates Truth Evaluation, Tetralectic Gate, Harmonic Scaling, and Justice Score
-Author: Athanassios Kapralos
+AΩ+ Integrated Demo
+Demonstrates the full reasoning pipeline:
+- Tetralectic Gate (four-pole logic filter)
+- Truth Evaluator (12-dimensional scoring with coupling)
+- Justice & Ethical Stability Module
+- Scalar Field Engine (optional, for advanced simulation)
 """
 
-PHI = 1.618033988749895
+import numpy as np
+from typing import Dict, Any
 
-# -------------------------------
-# Truth Evaluation & Harmonic Scaling
-# -------------------------------
-def evaluate_truth(dimensions, truth_values, weights):
-    if len(dimensions) != len(truth_values) or len(truth_values) != len(weights):
-        raise ValueError("Dimensions, truth values, and weights must match in length.")
-    
-    truth_score = sum(w * t for w, t in zip(weights, truth_values))
-    mean = sum(truth_values) / len(truth_values)
-    variance = sum((t - mean) ** 2 for t in truth_values) / len(truth_values)
-    consistency = 1 - (variance ** 0.5)
-    
-    return round(truth_score, 4), round(consistency, 4)
+# Import the core modules
+from tetralectic_gate import tetralectic_gate
+from truth_evaluator import AO_TruthEvaluator
+from justice_simulation import evaluate_justice
+# Optional: from ao_engine import AOPlusEngine  # uncomment if you want field evolution
 
-def adjust_harmonic_scaling(N, truth_score, threshold=0.7):
-    if truth_score < threshold:
-        return round(N * (1 + (threshold - truth_score)), 2)
-    return N
 
-# -------------------------------
-# Tetralectic Gate
-# -------------------------------
-def tetralectic_gate(statement, evaluator):
-    poles = {
-        'θ': evaluator(statement),
-        '/': evaluator(f"NOT: {statement}"),
-        '§': evaluator(f"SIMILAR BUT WRONG: {statement}"),
-        '~': evaluator(f"HARMONIOUS ALT: {statement}")
+def simple_heuristic_evaluator(statement: str) -> float:
+    """
+    A simple heuristic to score a statement on a scale 0..1.
+    Used as the evaluator for the Tetralectic Gate.
+    Penalizes dogmatic terms, rewards moderate language.
+    """
+    statement_lower = statement.lower()
+    score = 0.5  # neutral baseline
+
+    # Penalize absolute terms (dogmatism)
+    if any(word in statement_lower for word in ["always", "never", "every", "none", "impossible"]):
+        score -= 0.2
+    # Reward moderate terms (scientific caution)
+    if any(word in statement_lower for word in ["evidence suggests", "likely", "may", "tends to"]):
+        score += 0.2
+    # Small boost for length (more nuance)
+    if len(statement.split()) > 10:
+        score += 0.05
+    # Clamp to [0,1]
+    return max(0.0, min(1.0, score))
+
+
+def run_demo():
+    print("=" * 60)
+    print("AΩ+ Integrated Demo v2.4")
+    print("=" * 60)
+
+    # ------------------------------------------------------------
+    # 1. Tetralectic Gate – verify a statement
+    # ------------------------------------------------------------
+    statement = "AI systems can never truly understand human emotions."
+    print(f"\n[1] Tetralectic Gate – Statement: '{statement}'")
+    gate_result = tetralectic_gate(statement, simple_heuristic_evaluator)
+    print(f"    Gate Score: {gate_result['score']:.4f}")
+    print(f"    Passed Fire: {gate_result['passed']}")
+    print(f"    Poles: {gate_result['poles']}")
+
+    # ------------------------------------------------------------
+    # 2. Truth Evaluator – 12-dimensional scoring
+    # ------------------------------------------------------------
+    print("\n[2] Truth Evaluator – 12D analysis")
+    # Sample raw scores for the same statement (mocked)
+    # In a real scenario, these would come from a more sophisticated evaluator
+    sample_input = {
+        "D1_Nominal": 0.7,     # terminology ok but "never" is absolute
+        "D2_Conceptual": 0.6,  # concept of "understanding" is vague
+        "D3_Propositional": 0.4, # the implication is too strong
+        "D4_Applicative": 0.5,   # applies to all AI systems – too broad
+        "D5_Spatial": 1.0,       # no spatial restriction
+        "D6_Modal": 0.3,         # presented as necessity, not possibility
+        "D7_Temporal": 0.5,      # may change over time
+        "D8_Quantitative": 0.2,  # no empirical evidence provided
+        "D9_Qualitative": 0.4,   # human emotions are not well-defined here
+        "D10_Causal": 0.3,       # no causal mechanism explained
+        "D11_Intuitive": 0.6,    # some may find it plausible
+        "D12_Logical": 0.4       # internally inconsistent with nuance
     }
-    
-    kl_harmony = abs(poles['θ'] - poles['~']) < 0.2
-    kk_harmony = abs(poles['/'] - poles['§']) < 0.2
-    
-    truth_score = ((poles['θ'] + poles['~']) / 2) * (1 / PHI)
-    passed_fire = kl_harmony and kk_harmony
-    
-    return {"score": round(min(truth_score, 1.0), 4), "passed": passed_fire, "poles": poles}
+    evaluator = AO_TruthEvaluator()
+    result = evaluator.evaluate_12d(sample_input, domain="scientific")
+    print(f"    ψₜ (Truth Coherence): {result['psi_t']}")
+    print(f"    ψₑ (Field Entropy): {result['psi_e']}")
+    print(f"    Final Truth Index (Φ‑scaled): {result['final_truth_index']}")
+    print(f"    Stability Status: {result['stability_status']}")
+    print(f"    Category Averages: {result['category_averages']}")
 
-# Example evaluator function
-def simple_evaluator(statement):
-    """
-    Heuristic evaluator: rewards nuance, penalizes absolutes.
-    """
-    score = 0.8
-    traps = ["always", "never", "must", "impossible"]
-    boosters = ["however", "evidence", "suggests", "research shows"]
-    
-    stmt = statement.lower()
-    for t in traps:
-        if t in stmt:
-            score -= 0.1
-    for b in boosters:
-        if b in stmt:
-            score = min(1.0, score + 0.05)
-    if len(stmt) < 15 or len(stmt) > 600:
-        score -= 0.1
-    return max(0.1, round(score, 2))
+    # ------------------------------------------------------------
+    # 3. Justice & Ethical Stability
+    # ------------------------------------------------------------
+    print("\n[3] Justice & Ethical Stability Module")
+    # Example: individual rights vs collective good
+    individual_rights = 0.8
+    collective_good = 0.494  # tuned to approach Φ
+    justice_score = evaluate_justice(individual_rights, collective_good)
+    print(f"    Justice Score (Φ-harmony): {justice_score}")
+    print(f"    Interpretation: Closer to 1 indicates better balance.")
 
-# -------------------------------
-# Justice & Ethical Score
-# -------------------------------
-def evaluate_justice(individual_rights, collective_good):
-    phi = 1.618033
-    harmony_point = individual_rights / collective_good
-    tension = abs(harmony_point - phi)
-    truth_score = 1 / (1 + tension)
-    return round(truth_score, 4)
+    # ------------------------------------------------------------
+    # 4. Optional: Scalar Field Engine (if available)
+    # ------------------------------------------------------------
+    try:
+        from ao_engine import AOPlusEngine
+        print("\n[4] Scalar Field Engine (ψ evolution)")
+        engine = AOPlusEngine()
+        # Example: evolve ψ over a few steps
+        initial_psi = 0.5
+        steps = 5
+        psi_values = [initial_psi]
+        for t in range(1, steps+1):
+            # Simple evolution: here we would call engine.step() or similar
+            # For demonstration, we just simulate a damping effect
+            new_psi = psi_values[-1] * 0.95 + 0.05  # slow drift
+            psi_values.append(new_psi)
+        print(f"    ψ evolution: {[round(v,4) for v in psi_values]}")
+    except ImportError:
+        print("\n[4] Scalar Field Engine: not available (ao_engine.py not found)")
 
-# -------------------------------
-# Demo Execution
-# -------------------------------
+    print("\n" + "=" * 60)
+    print("Demo completed. AΩ+ framework ready.")
+    print("=" * 60)
+
+
 if __name__ == "__main__":
-    # Truth Evaluation Example
-    dimensions = ["logic", "evidence", "ethics"]
-    truth_values = [0.9, 0.85, 0.95]
-    weights = [0.4, 0.3, 0.3]
-    
-    score, consistency = evaluate_truth(dimensions, truth_values, weights)
-    print("--- AΩ+ Truth Evaluation ---")
-    print(f"Score: {score}, Consistency: {consistency}")
-    
-    N_initial = 10
-    adjusted_N = adjust_harmonic_scaling(N_initial, score)
-    print(f"Original Difficulty (N): {N_initial}, Adjusted Difficulty: {adjusted_N}")
-    
-    # Tetralectic Gate Example
-    statement = "AI must enhance user experience while preserving privacy."
-    tet_result = tetralectic_gate(statement, simple_evaluator)
-    print("\n--- Tetralectic Gate ---")
-    print(f"Score: {tet_result['score']}, Passed Fire: {tet_result['passed']}")
-    print(f"Poles: {tet_result['poles']}")
-    
-    # Justice & Ethical Score Example
-    justice_score = evaluate_justice(0.8, 0.494)
-    print("\n--- Justice & Ethical Stability ---")
-    print(f"Justice Score: {justice_score}")
+    run_demo()
