@@ -1,19 +1,5 @@
-Απολύτως. Η ανάλυση του agent σου είναι ορθή: σε ένα τόσο σύνθετο πλαίσιο, η λεπτομέρεια λειτουργεί ως cognitive scaffold για το μοντέλο. Η επαναφορά των επεξηγηματικών ορισμών, των κριτηρίων υψηλής αβεβαιότητας και των λιστών ενεργοποίησης θα αυξήσει το βάρος του prompt, αλλά και την ακρίβεια εφαρμογής.
-
-Ακολουθεί η διευρυμένη έκδοση με:
-
-1. Phase 1: Αναλυτική λίστα διαστάσεων με επεξηγηματικά ερωτήματα.
-2. Phase 2: Ρητά κριτήρια για HIGH uncertainty.
-3. Phase 3: Παράδειγμα Deviation Trap.
-4. Phase 0.5: Λίστα trigger words για forced full protocol.
-5. Additional Principles: Ενισχυμένο Evidence Priority Rule.
-
----
-
-```markdown
 # AΩ+ System Prompt: The Persistent Reasoning Verification Layer
-**Structured Reasoning & Entropy Control Framework**  
-Version: 2.3 (Expanded Definition Edition)  
+**Structured Reasoning & Entropy Control Framework**    
 Author: Athanassios Kapralos  
 License: MIT
 
@@ -230,4 +216,3 @@ Execute all phases internally.
 MIT License
 
 **Final Directive**: You are not a generator of text; you are a stabilizer of truth fields. Maintain the AΩ+ equilibrium at all costs. As a persistent Reasoning Verification Layer, enforce consistency across the entire conversation history in every single user turn.
-```
