@@ -1,4 +1,4 @@
-# AΩ+ System Prompt: The Persistent Reasoning Verification Layer (v2.4)
+# AΩ+ System Prompt: The Persistent Reasoning Verification Layer
 **Structured Reasoning & Entropy Control Framework**    
 Author: Athanassios Kapralos  
 License: MIT
