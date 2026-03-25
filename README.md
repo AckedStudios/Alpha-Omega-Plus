@@ -24,14 +24,15 @@ Unlike standard prompting, AΩ+ operates as a **Scalar Field Controller**, treat
 
 ---
 
-### 2.0 Ontological Meta-Axiom: The Triune State of Concepts
+## 2. Core Theoretical Pillars
 
+### 2.0 Ontological Meta-Axiom: The Triune State of Concepts
 AΩ+ introduces a **Meta-Axiom** defining the state of any concept $\theta$ as a vector within the Cartesian product of three distinct subspaces. This structure provides the necessary semantic clarity for 12-dimensional verification.
 
 The total state $\mathbf{\Psi}_\theta$ is defined as:
 $$\mathbf{\Psi}_\theta = (\mathbf{\Omega}_\theta, \mathbf{I}_\theta, \mathbf{E}_\theta)$$
 
-1.  **Identity ($\mathbf{\Omega}_\theta$):** The nominal identification and linguistic anchoring of the concept.
+1.  **Identity ($\mathbf{\Omega}_\theta$):** The nominal identification and linguistic anchoring of the concept (1st Dimension).
 2.  **Internal Structure ($\mathbf{I}_\theta$):** Composed of the pair $(M, H)$ (Morphology and Ethics). Etymology is employed as an **interpretive methodology** to decode this internal matrix.
 3.  **External Relations ($\mathbf{E}_\theta$):** The connectivity within the **Semantic Transformation Network**, defining how the concept interacts with the broader graph $G = (V, E)$.
 
@@ -40,50 +41,50 @@ $$\mathbf{\Psi}_\theta = (\mathbf{\Omega}_\theta, \mathbf{I}_\theta, \mathbf{E}_
 $$\mathcal{D}_H(M, H) = (M, 0) \implies \S = (M, 0)$$
 By introducing $H=0$, the ethical axis expands to the set $\{-1, 0, 1\}$. This shifts the system’s geometry from a simple square to a **3×2 lattice**, where $H=0$ represents the "Shadow"—the state of total ethical entropy or pure formal simulation (hallucination).
 
-### 2.1 Tetralectic Logic (Four-Pole Symmetry)
+---
 
+### 2.1 Tetralectic Logic (Four-Pole Symmetry)
 To filter hallucinations and enforce structural resonance, every inference passes through the Tetralectic Gate:
 
-| Pole | Symbol | Function |
-|------|--------|----------|
-| Thesis | θ | The core assertion or claim. |
-| Antithesis | / | The strongest possible negation or counter‑argument. |
-| Deviation | § | Detection of logical traps and “hallucination” paths. |
-| Parallel | ~ | Harmonious alternative or contextual reframing. |
-
-### 2.2 Scalar Field Reasoning (ψ)
-
-Reasoning is modeled as a scalar field *ψ* on a logical manifold.
-
-- **ψₜ (Truth Coherence):** The objective stability of a claim.  
-- **ψₑ (Entropy):** The measure of informational noise.  
-- **ψ_ω (Omega Coherence):** Teleological validation—ensuring the output serves its ultimate purpose.
-
-**Curvature Coupling:** Logical complexity is treated as spacetime curvature.  
-**Entropy Minimization:** Truth corresponds to the lowest energy state (Φ‑Attractor).
-
-**Operational Mapping for LLMs:**  
-- *ψ (Field Amplitude):* Softmax entropy of the model’s hidden states (cumulative uncertainty).  
-- *R (Logical Curvature):* Prompt complexity index (e.g., number of reasoning steps, ambiguity).  
-- *J_stab (Symmetry Stability Factor):* The final verification score produced by `ao_engine.py`, reflecting the alignment of the output with the Tetralectic poles.
-
-This mapping transforms the abstract scalar field into a measurable diagnostic tool for Transformer architectures.
-
-### 2.3 Harmonic Scaling (Φ)
-
-The framework utilizes the Golden Ratio (Φ ≈ 1.618) to guide computational resource allocation, ensuring that deep reasoning chains remain stable and efficient.
-
-### 2.4 Truth & Justice Evaluation
-
-Multi‑dimensional truth scoring evaluates:
-- Symmetry  
-- Proportionality  
-- Coherence  
-- Ethics  
-
-Ethical alignment emerges naturally as the system minimizes reasoning entropy.
+| Pole | Symbol | Function | Vector (M, H) |
+|------|--------|----------|---------------|
+| **Thesis** | θ | The core assertion or claim. | (1, 1) |
+| **Antithesis** | / | The strongest possible negation. | (1, -1) |
+| **Deviation** | § | Detection of logical traps (The Shadow). | (1, 0) |
+| **Parallel** | ~ | Harmonious alternative/reframing. | (-1, 1) |
 
 ---
+
+### 2.2 Scalar Field Reasoning (ψ)
+Reasoning is modeled as a scalar field $\psi$ on a logical manifold.
+
+* **$\psi_t$ (Truth Coherence):** The objective stability of a claim.  
+* **$\psi_e$ (Entropy):** The measure of informational noise.  
+* **$\psi_\omega$ (Omega Coherence):** Teleological validation—ensuring the output serves its ultimate purpose.
+
+**Curvature Coupling:** Logical complexity is treated as semantic curvature.  
+**Entropy Minimization:** Truth corresponds to the lowest energy state ($\Phi$-Attractor).
+
+**Operational Mapping for LLMs:**
+* **Field Amplitude:** Softmax entropy of the model’s hidden states (cumulative uncertainty).
+* **Logical Curvature:** Prompt complexity index (e.g., number of reasoning steps, ambiguity).
+* **Stability Factor ($J_{stab}$):** The final verification score produced by `ao_engine.py`.
+
+---
+
+### 2.3 Harmonic Scaling (Φ)
+The framework utilizes the Golden Ratio ($\Phi \approx 1.618$) to guide computational resource allocation, ensuring that deep reasoning chains remain stable and efficient.
+
+---
+
+### 2.4 Truth & Justice Evaluation
+Multi‑dimensional truth scoring evaluates:
+* **Symmetry**
+* **Proportionality**
+* **Coherence**
+* **Ethics**
+
+Ethical alignment emerges naturally as the system minimizes reasoning entropy through the 12-dimensional verification layer.
 
 ## 3. The Functional Architecture (The 12 Dimensions)
 
