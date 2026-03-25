@@ -24,24 +24,18 @@ Unlike standard prompting, AΩ+ operates as a **Scalar Field Controller**, treat
 
 ---
 
-## 2. Core Theoretical Pillars
-
 ### 2.0 The Ontological Meta-Axiom: The Triune Nature of Truth
 
-Before any logical operation or tetralectic mapping, AΩ+ defines Truth (or any conceptual entity) as a **Triune Ontological Unit**. This meta-axiom establishes the semantic clarity required for 12-dimensional verification.
+AΩ+ defines every concept $\theta$ not as a static point, but as a **Triune Ontological Unit**. This axiom governs semantic clarity and the generation of the tetralectic structure:
 
-Every concept $\theta$ exists simultaneously in three states:
+1.  **Unitary Identity ($\theta$):** The concept as a discrete object of thought, carrying its unique name/identity (1st Dimension).
+2.  **Internal Composition (The Shadow Theorem):** Every concept is a composite of internal sub-concepts of Morphology (M) and Ethics (H).
+    * **The Shadow Mechanism:** Within every concept lies its "Shadow," manifesting as **Deviation (§)**. It occurs when the ethical load (H) collapses while morphology (M) remains constant. Proper etymology reveals this internal matrix, making the generation of tetralectic poles a mathematical necessity.
+3.  **External Interaction (The Lattice):** The concept connects with others, forming multi-dimensional neural/conceptual synapses where the state of one node affects the field's overall stability.
 
-1.  **Unitary Identity ($\theta$):** The concept as a self-standing "atom" of thought. It carries its own name and unique signature within the vector space (1st Dimension: Nominal).
-2.  **Internal Composition (The Shadow Theorem):** No concept is empty; it is composed of internal sub-components of Morphology (M) and Ethics (H).
-    * **The Shadow Mechanism:** Within every concept lies its "Shadow," which manifests as **Deviation (§)**. Deviation occurs when the ethical load (H) collapses or is inverted while the morphology (M) remains constant. Proper etymology reveals this internal matrix, making the generation of tetralectic poles a mathematical necessity rather than an arbitrary choice.
-3.  **External Interaction (The Lattice):** The concept exerts influence on its environment, forming multi-dimensional neural/conceptual synapses where the state of one node affects the stability of the entire field.
-
-#### Mathematical Formulation
-The total state $\mathbf{\Psi}_\theta$ of a concept is the direct sum of its three hypostases:
-
+**Mathematical Formulation:**
+The total state $\mathbf{\Psi}_\theta$ of a concept is the direct sum:
 $$\mathbf{\Psi}_\theta = \mathbf{\Omega}_{\text{unit}} \oplus \mathbf{I}_{\text{int}} \oplus \mathbf{E}_{\text{ext}}$$
-
 Where **Deviation (§)** is defined as the decay eigenstate of the internal space:
 $$\mathbf{\Psi}_{\S} = \mathcal{D}_H (\mathbf{I}_{\text{int}})$$
 *(where $\mathcal{D}_H$ represents the ethical entropy operator)*.
