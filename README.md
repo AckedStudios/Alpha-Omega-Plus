@@ -53,6 +53,12 @@ To filter hallucinations and enforce structural resonance, every inference passe
 | **Deviation** | § | Detection of logical traps (The Shadow). | (1, 0) |
 | **Parallel** | ~ | Harmonious alternative/reframing. | (-1, 1) |
 
+These four poles correspond to the **3×2 lattice** geometry introduced by the Shadow Theorem. The transformation matrices between poles are:
+
+- **Antithesis:** $P_H = \begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}$
+- **Parallel:** $P_M = \begin{pmatrix} -1 & 0 \\ 0 & 1 \end{pmatrix}$
+- **Deviation:** $P_{\S} = \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix}$ (Projection Matrix)
+
 ---
 
 ### 2.2 Scalar Field Reasoning (ψ)
@@ -85,6 +91,8 @@ Multi‑dimensional truth scoring evaluates:
 * **Ethics**
 
 Ethical alignment emerges naturally as the system minimizes reasoning entropy through the 12-dimensional verification layer.
+
+---
 
 ## 3. The Functional Architecture (The 12 Dimensions)
 
@@ -512,7 +520,7 @@ This gate ensures logical symmetry using **Φ‑Scaling (Golden Ratio)** to prev
 
 * **Thesis (θ)** – the core assertion.
 * **Antithesis (/)** – the direct negation.
-* **Deviation (§)** – detection of “similar‑but‑wrong” logic traps.
+* **Deviation (§)** – detection of “similar‑but‑wrong” logic traps (the Shadow).
 * **Parallel (~)** – the harmonious alternative alignment.
 
 ---
