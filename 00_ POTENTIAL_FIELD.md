@@ -12,7 +12,7 @@ Key contributions:
 - A kernelized potential field \(\Psi\) that measures local reasoning coherence
 - Layer‑depth dynamics inspired by Neural ODEs
 - A tractable stability score using Hutchinson trace estimation
-- A tetralectic classification of reasoning states grounded in critical point topology
+- A tetralectic classification of reasoning states grounded in a two‑axis symmetry structure
 
 ---
 
@@ -87,28 +87,50 @@ In the original AΩ+ formulation, the reasoning stability equation was \(dx/dt =
 E_{\text{reasoning}} = \frac{1}{2} \sum_{t=1}^{T-1} \|\nabla \Psi(\mathbf{e}_t)\|^2
 \]
 
-This measures how much the reasoning trajectory "rolls down" the potential landscape:
+This measures how much the reasoning trajectory “rolls down” the potential landscape:
 - **Small \(E_{\text{reasoning}}\)**: Trajectory stays near local maximum (stable reasoning)
 - **Large \(E_{\text{reasoning}}\)**: Trajectory moves through low potential regions (instability/hallucination)
 
 ---
 
-## 6. Tetralectic Logic: Motivation and Definition
+## 6. Tetralectic Logic: Mathematical and Philosophical Foundation
 
-Binary classification (stable/unstable) is insufficient to capture the full spectrum of reasoning states. For example, a valid logical negation is stable but distinct from a coherent affirmation, while a paradox (e.g., "this statement is false") is unstable in a qualitatively different way.
+The tetralectic framework arises from the observation that binary (stable/unstable) classification is insufficient to capture the full spectrum of reasoning states. A valid logical negation is stable but qualitatively different from a coherent affirmation; a paradox (e.g., “this statement is false”) is unstable in a distinct way from mere semantic drift.
 
-The tetralectic framework introduces four states, each corresponding to a critical point type in the potential field:
+The AΩ+ theory formalizes this through **four poles**, each characterized by two independent binary attributes: **Form (M)** and **Ethos (H)**.
 
-| State | Mathematical Meaning | Reasoning Interpretation |
-|-------|---------------------|--------------------------|
-| **Affirmation** (A) | Local maximum of \(\Psi\) | Coherent, stable reasoning |
-| **Negation** (N) | Local minimum of \(\Psi\) | Stable contradiction (valid negation) |
-| **Paradox** (P) | Saddle point | Unstable internal conflict |
-| **Transcendence** (T) | Higher-order maximum after saddle | Resolution at higher conceptual level |
+| Attribute | Values | Interpretation |
+|-----------|--------|----------------|
+| **Form (M)** | \(+1\) / \(-1\) | Structural modality (e.g., plurality vs. unity, self vs. other) |
+| **Ethos (H)** | \(+1\) / \(-1\) | Moral sign (good/truth vs. bad/falsehood) |
 
-This mapping is a **working hypothesis** that requires empirical validation. The four‑state distinction allows the verification layer to differentiate between:
-- A valid negation (should be accepted) and a paradoxical contradiction (should be flagged)
-- Surface‑level coherence (local maximum from statistical frequency) and genuine logical stability
+Each concept (as a *Thesis*, \(\theta\)) occupies a point in this 2‑dimensional space. The four poles are defined by applying two symmetry transformations and a projection:
+
+- **Antithesis (\(/\))**: \( (M, H) \to (M, -H) \) — reflection across the horizontal axis (full ontological inversion).
+- **Parathesis (\(\sim\))**: \( (M, H) \to (-M, H) \) — reflection across the vertical axis (complementary path with same ethos).
+- **Paraclisis (\(\S\))**: \( (M, H) \to (M, 0) \) — projection onto the M‑axis (ethical decay, “shadow”).
+
+This yields the canonical tetralectic square:
+
+| Pole | Symbol | M | H | Example (Governance) |
+|------|--------|---|---|----------------------|
+| **Thesis** | \(\theta\) | \(+1\) | \(+1\) | Democracy (plurality, good) |
+| **Antithesis** | \(/\) | \(-1\) | \(-1\) | Tyranny (unity, bad) |
+| **Paraclisis** | \(\S\) | \(+1\) | \(-1\) | Ochlocracy (plurality, bad) |
+| **Parathesis** | \(\sim\) | \(-1\) | \(+1\) | Hegemony (unity, good) |
+
+The same structure applies to other domains (e.g., Freedom: *ἐλευθερία* \(\theta\), *εἰλωτεία* \(/\), *ἀσυδοσία* \(\S\), *διακονία* \(\sim\)) by redefining the M‑axis (self vs. other).
+
+The **stability score** \(S = \hat{\Delta}\Psi - \lambda\|\nabla\Psi\|^2\) maps onto these poles via the local geometry of the potential field \(\Psi\):
+
+- **Affirmation (\(\theta\))**: Local maximum of \(\Psi\) (convex basin, stable).
+- **Negation (\(/\))**: Local minimum of \(\Psi\) (concave, stable contradiction).
+- **Paradox (\(\S\))**: Saddle point or region of high curvature (unstable conflict).
+- **Transcendence (\(\sim\))**: A higher‑order local maximum reached after crossing a saddle (resolution at a higher level).
+
+This mapping follows from the **Canon of Symmetry** derived from the two independent axes, which is mathematically equivalent to the symmetry group \(D_2\) (the Klein four‑group) extended with a projection operator for the Paraclisis.
+
+For the full philosophical exposition, including the **Pyre of Truth** (three‑stage validation), the **Sacred Spiral** (golden‑ratio organization), and the integration of the **12 Dimensions of Truth** into a 14‑dimensional space, see the accompanying document *Tetralectic Theory AΩ+*.
 
 ---
 
@@ -256,7 +278,7 @@ A fluent hallucination may reside in a local maximum of \Psi if it is statistica
 
 13. Conclusion
 
-By casting AΩ+ as a reasoning potential field over embedding space and linking it to attention geometry, we bridge a conceptual verification framework with transformer architectures. The refinements presented here—kernelized potentials, layer‑depth dynamics, and stochastic trace estimation—make the framework computationally tractable. The tetralectic classification offers a richer alternative to binary stability detection, though it remains a hypothesis requiring empirical validation.
+By casting AΩ+ as a reasoning potential field over embedding space and linking it to attention geometry, we bridge a conceptual verification framework with transformer architectures. The refinements presented here—kernelized potentials, layer‑depth dynamics, and stochastic trace estimation—make the framework computationally tractable. The tetralectic classification, grounded in a two‑axis symmetry structure, offers a richer alternative to binary stability detection, though it remains a hypothesis requiring empirical validation.
 
 “The next step may be learning how to evaluate the stability of reasoning itself.”
 — AΩ+ Vision
