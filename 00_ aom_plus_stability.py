@@ -1,10 +1,12 @@
 """
-AΩ+ Reasoning Stability Field – Production‑Ready (Optimized)
+AΩ+ Reasoning Stability Field – Production‑Ready
 
-- Rademacher vectors for Hutchinson (lower variance).
-- Optional CUDA cache clearing per batch (not per sentence).
-- Fixed random seed for reproducibility.
-- Correct heap logic for top N most unstable sentences.
+Computes stability score S = ΔΨ - λ·‖∇Ψ‖² for each sentence using token embeddings.
+- Potential field Ψ with cosine similarity and uniform attention.
+- Gradient via autograd.
+- Laplacian via Hutchinson trace estimator with Rademacher vectors.
+- Keeps top N most unstable sentences in a max‑heap.
+- Reproducible, efficient for large datasets.
 """
 
 import torch
@@ -29,7 +31,7 @@ MAX_SEQ_LENGTH = 128
 TOP_N_VISUAL = 20
 SAVE_PLOT = "stability_top.png"
 RANDOM_SEED = 42
-CLEAR_CUDA_CACHE = True        # clear cache per batch (may help with OOM)
+CLEAR_CUDA_CACHE = True        # clear cache per batch (if OOM)
 
 # ============================================================================
 # Device & reproducibility
@@ -102,7 +104,7 @@ with open(OUTPUT_CSV, mode='w', newline='', encoding='utf-8-sig') as f_csv:
     writer = csv.writer(f_csv)
     writer.writerow(["text", "grad_norm_sq", "laplacian_est", "stability_score"])
 
-    top_heap = []
+    top_heap = []  # max‑heap of (-stability, text)
 
     for start_idx in tqdm(range(0, len(all_texts), BATCH_SIZE), desc="Processing"):
         batch_texts = all_texts[start_idx:start_idx + BATCH_SIZE]
@@ -130,19 +132,20 @@ with open(OUTPUT_CSV, mode='w', newline='', encoding='utf-8-sig') as f_csv:
 
             writer.writerow([text, grad_norm_sq, laplacian_est, stability])
 
-            # Keep top N most unstable
+            # Keep top N most unstable (lowest stability)
             entry = (-stability, text)
             if len(top_heap) < TOP_N_VISUAL:
                 heapq.heappush(top_heap, entry)
             else:
-                if -stability > top_heap[0][0]:
+                if -stability > top_heap[0][0]:   # more unstable than the current worst
                     heapq.heapreplace(top_heap, entry)
 
-        # Optional cache clearing per batch (not per sentence)
+        # Optional per‑batch cache clearing
         if CLEAR_CUDA_CACHE and device.type == 'cuda':
             torch.cuda.empty_cache()
             gc.collect()
 
+    # Convert heap back to sorted list of (stability, text)
     top_entries = sorted([(-s, t) for s, t in top_heap], key=lambda x: x[0])
 
 print(f"Computation finished. Results saved to {OUTPUT_CSV}")
